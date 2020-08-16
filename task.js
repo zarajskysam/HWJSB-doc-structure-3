@@ -9,8 +9,8 @@ for (let i = 0; i < product.length; i++) {
             event.target.previousElementSibling.textContent = +event.target.previousElementSibling.textContent + 1;
         } else if (event.target.classList.contains("product__quantity-control_dec")){
             event.target.nextElementSibling.textContent = +event.target.nextElementSibling.textContent - 1;
-            if (event.target.nextElementSibling.textContent < 0) {
-                event.target.nextElementSibling.textContent = 0;
+            if (event.target.nextElementSibling.textContent == 0) {
+                event.target.nextElementSibling.textContent = 1;
             }
         } else if (event.target.classList.contains("product__add")){
             let productInCart = document.querySelector(`.cart__product[data-id='${product[i].getAttribute("data-id")}']`);
